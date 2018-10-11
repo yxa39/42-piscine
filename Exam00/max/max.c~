@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   max.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yxie <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/05 10:17:49 by yxie              #+#    #+#             */
+/*   Updated: 2018/10/05 10:24:18 by yxie             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include <stdio.h>
+int max(int *tab, unsigned int len)
+{
+	int i;
+	int biggest;
+
+	if (len > 0 && *tab)
+	{
+		biggest = *tab;
+		while (i < len)
+		{
+			if (*tab > biggest)
+				biggest = *tab;
+		}
+		return (biggest);
+	}
+	return (0);
+}
+
+
+int main()
+{
+	int a[] = {1, 2, 3, 4, 5, 7, 3, 2};
+	
+	int max= max(a, 8);
+	printf("%d", max);
+}
